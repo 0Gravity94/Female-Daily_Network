@@ -4,9 +4,11 @@ import fdn from "../assets/fdn.png";
 
 function Navbar() {
   return (
-    <div className="navbar border border-b-stone-300">
+    <div className="navbar">
       <div className="navbar-start">
-        <GiHamburgerMenu />
+        <a className="btn btn-ghost">
+          <GiHamburgerMenu />
+        </a>
         <a className="btn btn-ghost">
           <img src={fdn} alt="female daily network" className="w-full h-1/3" />
         </a>

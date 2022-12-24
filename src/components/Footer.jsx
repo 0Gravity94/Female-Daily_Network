@@ -41,20 +41,20 @@ function Footer() {
             Copyright © 2015 - 2017 Female Daily Network • All rights reserved{" "}
           </p>
         </div>
-        <div className="md:place-self-center md:justify-self-end lg:mr-56">
+        <div className="md:place-self-center md:justify-self-end lg:mr-64">
           <div className="grid grid-flow-col gap-4">
-            <a>
+            <a className="link">
               {/* <svg xmlns={facebook}></svg> */}
-              <img src={facebook} alt="facebook" className="w-10 h-10" />
+              <img src={facebook} alt="facebook" className="w-7 h-7" />
             </a>
-            <a>
-              <img src={twitter} alt="twitter" className="w-10 h-10" />
+            <a className="link">
+              <img src={twitter} alt="twitter" className="w-7 h-7" />
             </a>
-            <a>
-              <img src={instagram} alt="instagram" className="w-10 h-10" />
+            <a className="link">
+              <img src={instagram} alt="instagram" className="w-7 h-7" />
             </a>
-            <a>
-              <img src={youtube} alt="youtube" className="w-10 h-10" />
+            <a className="link">
+              <img src={youtube} alt="youtube" className="w-7 h-7" />
             </a>
           </div>
         </div>

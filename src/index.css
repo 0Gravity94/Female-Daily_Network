@@ -6,6 +6,11 @@ body {
   margin: 0;
 }
 
+#editor-choice {
+  width: 500px;
+  height: max-content;
+}
+
 #top-frame {
   background-color: gainsboro;
   border: 1px solid slategrey;
@@ -59,7 +64,8 @@ body {
   font-size: large;
   font-weight: bold;
   color: dimgray;
-  margin: 10px;
+  margin-top: 50px;
+  margin-bottom: 5px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -116,6 +122,12 @@ body {
     font-size: x-large;
     font-weight: bold;
     color: dimgray;
-    margin: 10px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+  }
+
+  #editor-choice {
+    width: 1100px;
+    height: max-content;
   }
 }
