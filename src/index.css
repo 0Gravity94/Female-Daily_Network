@@ -5,3 +5,117 @@
 body {
   margin: 0;
 }
+
+#top-frame {
+  background-color: gainsboro;
+  border: 1px solid slategrey;
+  height: 50px;
+  width: 385px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  color: dimgray;
+  margin: 10px;
+}
+
+#billboard {
+  background-color: gainsboro;
+  border: 1px solid slategrey;
+  height: 125px;
+  width: 385px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  color: dimgray;
+  margin: 10px;
+}
+
+#internalCampaign {
+  background-color: gainsboro;
+  border: 1px solid slategrey;
+  height: 125px;
+  width: 385px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  color: dimgray;
+  margin: 10px;
+}
+
+#bottom-frame {
+  background-color: gainsboro;
+  border: 1px solid slategrey;
+  height: 50px;
+  width: 385px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  color: dimgray;
+  margin: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+  #top-frame {
+    background-color: gainsboro;
+    border: 1px solid slategrey;
+    height: 50px;
+    width: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: dimgray;
+    margin: 10px;
+  }
+
+  #billboard {
+    background-color: gainsboro;
+    border: 1px solid slategrey;
+    height: 250px;
+    width: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: dimgray;
+    margin: 10px;
+  }
+
+  #internalCampaign {
+    background-color: gainsboro;
+    border: 1px solid slategrey;
+    height: 250px;
+    width: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: dimgray;
+    margin: 10px;
+  }
+
+  #bottom-frame {
+    background-color: gainsboro;
+    border: 1px solid slategrey;
+    height: 50px;
+    width: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: dimgray;
+    margin: 10px;
+  }
+}
