@@ -9,19 +9,15 @@ function CardsArticles(props) {
     <div className="container grow flex flex-col justify-between gap-2  rounded-lg m-2 p-2">
       <div className="flex justify-center">
         <img
-          src="https://www.houstonmethodist.org/-/media/images/contenthub/article-images/wellness/2021/hub_expiredmakeup_social.jpg?mw=1382&hash=1B543B25C107BE17B37B8D8B5C4B9B6D"
-          alt={props.name}
+          src={props.image}
+          alt={props.title}
           className="rounded-md w-1/3 h-1/2"
         />
       </div>
-      <div className="font-bold text-sm">
-        {props.name}9 Best Face Oils for Sensitive Skin
-      </div>
+      <div className="font-bold text-sm">{props.title}</div>
       <div className="flex gap-1 text-xs">
-        <p className="font-semibold text-slate-600">
-          {props.description}Username{" "}
-        </p>
-        <p className="text-slate-400">{props.description}| 2 Hours Ago</p>
+        <p className="font-semibold text-slate-600">{props.author}</p>
+        <p className="text-slate-400">| {props.published_at} </p>
       </div>
     </div>
   );

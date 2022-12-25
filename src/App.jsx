@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
 
 import "./index.css";
 import Layout from "../src/components/Layout";
@@ -10,8 +12,34 @@ import {
 } from "./components/AdsFrames";
 import { CardsProduct, CardsArticles } from "../src/components/Cards";
 import applylip from "./assets/applylip.png";
+import { data } from "autoprefixer";
 
 function App() {
+  const dispatch = useDispatch();
+  const [datas, setDatas] = useState([]);
+  //const [articles, setArticles] = useState();
+
+  const objValues = Object.values(datas);
+  //setArticles(objValues[1]);
+  console.log(objValues);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function fetchData() {
+    axios
+      .get(`https://virtserver.swaggerhub.com/hqms/FDN-WP/0.1/wp`)
+      .then((res) => {
+        const results = res.data;
+        setDatas(results);
+        console.log(results);
+      })
+      .catch((err) => {
+        alert(err.toString());
+      });
+  }
+
   return (
     <>
       <Layout>
@@ -78,7 +106,14 @@ function App() {
               </p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            <CardsArticles />
+            {objValues[1].map((data) => (
+              <CardsArticles
+                image={data.image}
+                title={data.title}
+                author={data.author}
+                published_at={data.published_at}
+              />
+            ))}
           </div>
         </div>
 
