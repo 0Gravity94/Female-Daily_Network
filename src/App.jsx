@@ -10,17 +10,25 @@ import {
   InternalCampaign,
   BottomFrame,
 } from "./components/AdsFrames";
-import { CardsProduct, CardsArticles } from "../src/components/Cards";
+import {
+  CardsEditor,
+  CardsProduct,
+  CardsArticles,
+  CardsReview,
+} from "../src/components/Cards";
 import applylip from "./assets/applylip.png";
-import { data } from "autoprefixer";
+import innisfree from "./assets/innisfree.png";
+import maybelline from "./assets/maybelline.png";
+import nivea from "./assets/nivea.png";
+import SKII from "./assets/SKII.png";
+import thebodyshop from "./assets/thebodyshop.png";
+import theordinary from "./assets/theordinary.png";
 
 function App() {
   const dispatch = useDispatch();
   const [datas, setDatas] = useState([]);
-  //const [articles, setArticles] = useState();
 
-  const objValues = Object.values(datas);
-  //setArticles(objValues[1]);
+  const objValues = Object.keys(datas).map((k) => datas[k]);
   console.log(objValues);
 
   useEffect(() => {
@@ -60,11 +68,20 @@ function App() {
         <Billboard />
 
         {/* Editor's Choice */}
-        <div className="grid justify-items-stretch">
+        <div className="grid">
           <div id="editor-choice" className="justify-self-center p-2">
             <h1 className="text-xl font-bold">Editor's Choice</h1>
             <p className="text-base text-slate-400">Curated with love</p>
-            <CardsProduct />
+            {objValues[0]?.map((data) => (
+              <CardsEditor
+                image={data.product.image}
+                name={data.product.name}
+                rating={data.product.rating}
+                description={data.product.description}
+                editor={data.editor}
+                role={data.role}
+              />
+            ))}
           </div>
         </div>
 
@@ -89,15 +106,21 @@ function App() {
               </button>
             </div>
           </div>
-          <CardsProduct />
-          <CardsProduct />
+          {objValues[0]?.slice(0, 3).map((data) => (
+            <CardsProduct
+              image={data.product.image}
+              name={data.product.name}
+              rating={data.product.rating}
+              description={data.product.description}
+            />
+          ))}
         </div>
 
         {/* Ads */}
         <InternalCampaign />
 
         {/* Articles */}
-        <div className="grid justify-items-stretch">
+        <div className="grid">
           <div id="editor-choice" className="justify-self-center p-2">
             <h1 className="text-xl font-bold">Latest Articles</h1>
             <div className="flex justify-between">
@@ -106,7 +129,7 @@ function App() {
               </p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            {objValues[1].map((data) => (
+            {objValues[1]?.map((data) => (
               <CardsArticles
                 image={data.image}
                 title={data.title}
@@ -127,7 +150,17 @@ function App() {
               </p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            <CardsArticles />
+            {objValues[2]?.slice(0, 2).map((data) => (
+              <CardsReview
+                image={data.product.image}
+                name={data.product.name}
+                rating={data.product.rating}
+                description={data.product.desc}
+                comment={data.comment}
+                user={data.user}
+                profile={data.profile}
+              />
+            ))}
             {/* Make Carousel here */}
           </div>
         </div>
@@ -170,7 +203,14 @@ function App() {
               </p>
               {/* make carousel here */}
             </div>
-            <CardsArticles />
+            {objValues[0]?.slice(0, 3).map((data) => (
+              <CardsProduct
+                image={data.product.image}
+                name={data.product.name}
+                rating={data.product.rating}
+                description={data.product.description}
+              />
+            ))}
           </div>
         </div>
 
@@ -182,27 +222,41 @@ function App() {
               <p className="text-base text-slate-400">We all know and love</p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            <CardsArticles />
+            <div id="editor-choice" className="justify-self-center p-2 my-10">
+              <div className="flex max-w-full place-content-center gap-10">
+                <img src={nivea} alt="nivea" className="w-20 h-20" />
+                <img
+                  src={theordinary}
+                  alt="theordinary"
+                  className="w-20 h-20"
+                />
+                <img
+                  src={thebodyshop}
+                  alt="thebodyshop"
+                  className="w-24 h-14"
+                />
+                <img src={SKII} alt="SKII" className="w-24 h-14" />
+                <img src={maybelline} alt="maybelline" className="w-32 h-14" />
+                <img src={innisfree} alt="innisfree" className="w-20 h-20" />
+              </div>
+              <h1 className="text-xl font-bold">
+                Female Daily - Find everything you want to know about beauty on
+                Female Daily
+              </h1>
+              <div className="flex justify-between">
+                <p className="text-base">
+                  Products Reviews, Tips & Tricks, Expert and Consumer Opinions,
+                  Beauty Tutorials, Discussions, Beauty Workshops, anything!{" "}
+                  <br /> We are here to be your friendly solution to all thing
+                  beauty, inside and out!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Comment */}
-        <div className="grid justify-items-stretch">
-          <div id="editor-choice" className="justify-self-center p-2">
-            <h1 className="text-xl font-bold">
-              Female Daily - Find everything you want to know about beauty on
-              Female Daily
-            </h1>
-            <div className="flex justify-between">
-              <p className="text-base">
-                Products Reviews, Tips & Tricks, Expert and Consumer Opinions,
-                Beauty Tutorials, Discussions, Beauty Workshops, anything!{" "}
-                <br /> We are here to be your friendly solution to all thing
-                beauty, inside and out!
-              </p>
-            </div>
-          </div>
-        </div>
+        <div className="grid justify-items-stretch mt-10"></div>
       </Layout>
 
       <div>
