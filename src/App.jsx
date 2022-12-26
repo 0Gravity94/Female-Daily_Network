@@ -23,6 +23,9 @@ import nivea from "./assets/nivea.png";
 import SKII from "./assets/SKII.png";
 import thebodyshop from "./assets/thebodyshop.png";
 import theordinary from "./assets/theordinary.png";
+import Video1 from "./assets/Video1.jpg";
+import Video2 from "./assets/Video2.jpg";
+import Video3 from "./assets/Video3.jpg";
 
 function App() {
   const dispatch = useDispatch();
@@ -189,7 +192,13 @@ function App() {
               </p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            <CardsArticles />
+            <div className="flex my-5">
+              <img src={Video1} alt="video1" className="w-1/2 h-auto" />
+              <div>
+                <img src={Video2} alt="video2" className="w-1/2 h-auto" />
+                <img src={Video3} alt="video3" className="w-1/2 h-auto" />
+              </div>
+            </div>
           </div>
         </div>
 
