@@ -14,5 +14,4 @@ git clone https://github.com/0Gravity94/Female-Daily_Network.git
 3. `npm run dev` You can now play with the local develop environment.
 ---
 
-*p.s. (Not responsive)
 
