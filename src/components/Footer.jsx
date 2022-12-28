@@ -1,7 +1,7 @@
 import React from "react";
 
 import appStore from "../assets/appStore.png";
-import googlePlay from "../assets/googleplay.png";
+import googleplay from "../assets/googleplay.png";
 import fdn from "../assets/fdn.png";
 import twitter from "../assets/twitter.svg";
 import facebook from "../assets/facebook.svg";
