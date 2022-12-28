@@ -2,30 +2,32 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
-import "./index.css";
-import Layout from "../src/components/Layout";
+import "../styles/index.css";
+import Layout from "../components/Layout";
 import {
   TopFrame,
   Billboard,
   InternalCampaign,
+  MR2,
   BottomFrame,
-} from "./components/AdsFrames";
+} from "../components/AdsFrames";
 import {
   CardsEditor,
   CardsProduct,
   CardsArticles,
   CardsReview,
-} from "../src/components/Cards";
-import applylip from "./assets/applylip.png";
-import innisfree from "./assets/innisfree.png";
-import maybelline from "./assets/maybelline.png";
-import nivea from "./assets/nivea.png";
-import SKII from "./assets/SKII.png";
-import thebodyshop from "./assets/thebodyshop.png";
-import theordinary from "./assets/theordinary.png";
-import Video1 from "./assets/Video1.jpg";
-import Video2 from "./assets/Video2.jpg";
-import Video3 from "./assets/Video3.jpg";
+  CardsGroup,
+} from "../components/Cards";
+import applylip from "../assets/applylip.png";
+import innisfree from "../assets/innisfree.png";
+import maybelline from "../assets/maybelline.png";
+import nivea from "../assets/nivea.png";
+import SKII from "../assets/SKII.png";
+import thebodyshop from "../assets/thebodyshop.png";
+import theordinary from "../assets/theordinary.png";
+import Video1 from "../assets/Video1.jpg";
+import Video2 from "../assets/Video2.jpg";
+import Video3 from "../assets/Video3.jpg";
 
 function App() {
   const dispatch = useDispatch();
@@ -72,24 +74,26 @@ function App() {
 
         {/* Editor's Choice */}
         <div className="grid">
-          <div id="editor-choice" className="justify-self-center p-2">
+          <div id="editor-choice" className="justify-self-center p-2 my-10">
             <h1 className="text-xl font-bold">Editor's Choice</h1>
             <p className="text-base text-slate-400">Curated with love</p>
-            {objValues[0]?.map((data) => (
-              <CardsEditor
-                image={data.product.image}
-                name={data.product.name}
-                rating={data.product.rating}
-                description={data.product.description}
-                editor={data.editor}
-                role={data.role}
-              />
-            ))}
+            <div id="cards-editor">
+              {objValues[0]?.map((data) => (
+                <CardsEditor
+                  image={data.product.image}
+                  name={data.product.name}
+                  rating={data.product.rating}
+                  description={data.product.description}
+                  editor={data.editor}
+                  role={data.role}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Highlight */}
-        <div className="flex w-full h-fit bg-pink-200">
+        <div className="flex w-full h-fit bg-pink-200 mb-10">
           <img
             src={applylip}
             alt="woman holding liptint"
@@ -124,7 +128,7 @@ function App() {
 
         {/* Articles */}
         <div className="grid">
-          <div id="editor-choice" className="justify-self-center p-2">
+          <div id="editor-choice" className="justify-self-center p-2 my-10">
             <h1 className="text-xl font-bold">Latest Articles</h1>
             <div className="flex justify-between">
               <p className="text-base text-slate-400">
@@ -132,39 +136,48 @@ function App() {
               </p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            {objValues[1]?.map((data) => (
-              <CardsArticles
-                image={data.image}
-                title={data.title}
-                author={data.author}
-                published_at={data.published_at}
-              />
-            ))}
+            <div id="cards-article">
+              {objValues[1]?.map((data) => (
+                <CardsArticles
+                  image={data.image}
+                  title={data.title}
+                  author={data.author}
+                  published_at={data.published_at}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Reviews */}
-        <div className="grid justify-items-stretch">
+        <div className="grid mb-10">
           <div id="editor-choice" className="justify-self-center p-2">
-            <h1 className="text-xl font-bold">Latest Reviews</h1>
-            <div className="flex justify-between">
-              <p className="text-base text-slate-400">
-                So you can make better purchase desicion
-              </p>
-              <a className="link link-hover text-pink-600">See more ＞</a>
+            <div>
+              <h1 className="text-xl font-bold">Latest Reviews</h1>
+              <div className="flex justify-between w-2/3 pr-28">
+                <p className="text-base text-slate-400">
+                  So you can make better purchase desicion
+                </p>
+                <a className="link link-hover text-pink-600">See more ＞</a>
+              </div>
             </div>
-            {objValues[2]?.slice(0, 2).map((data) => (
-              <CardsReview
-                image={data.product.image}
-                name={data.product.name}
-                rating={data.product.rating}
-                description={data.product.desc}
-                comment={data.comment}
-                user={data.user}
-                profile={data.profile}
-              />
-            ))}
-            {/* Make Carousel here */}
+            <div className="flex justify-between">
+              <div id="cards-review">
+                {objValues[2]?.slice(0, 2).map((data) => (
+                  <CardsReview
+                    image={data.product.image}
+                    name={data.product.name}
+                    rating={data.product.rating}
+                    description={data.product.desc}
+                    comment={data.comment}
+                    user={data.user}
+                    profile={data.profile}
+                  />
+                ))}
+              </div>
+              {/* Make Carousel here */}
+              <MR2 />
+            </div>
           </div>
         </div>
 
@@ -178,7 +191,12 @@ function App() {
               </p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            <CardsArticles />
+            <div className="flex justify-items-stretch gap-5">
+              <CardsGroup />
+              <CardsGroup />
+              <CardsGroup />
+              <CardsGroup />
+            </div>
           </div>
         </div>
 
@@ -192,11 +210,35 @@ function App() {
               </p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            <div className="flex my-5">
-              <img src={Video1} alt="video1" className="w-1/2 h-auto" />
+            <div className="flex my-5 gap-x-5">
+              <iframe
+                id="video"
+                src="https://www.youtube.com/embed/eCwGx7y96dc"
+                className="my-2"
+                width="840"
+                height="480"
+                frameBorder={0}
+                allowFullScreen
+              ></iframe>
               <div>
-                <img src={Video2} alt="video2" className="w-1/2 h-auto" />
-                <img src={Video3} alt="video3" className="w-1/2 h-auto" />
+                <iframe
+                  id="video"
+                  src="https://www.youtube.com/embed/3Mif_wK6xDQ"
+                  className="py-2"
+                  width="420"
+                  height="240"
+                  frameBorder={0}
+                  allowFullScreen
+                ></iframe>
+                <iframe
+                  id="video"
+                  src="https://www.youtube.com/embed/3Mif_wK6xDQ"
+                  className="mt-2"
+                  width="420"
+                  height="240"
+                  frameBorder={0}
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
@@ -212,14 +254,16 @@ function App() {
               </p>
               {/* make carousel here */}
             </div>
-            {objValues[0]?.slice(0, 3).map((data) => (
-              <CardsProduct
-                image={data.product.image}
-                name={data.product.name}
-                rating={data.product.rating}
-                description={data.product.description}
-              />
-            ))}
+            <div id="cards-trending">
+              {objValues[0]?.map((data) => (
+                <CardsProduct
+                  image={data.product.image}
+                  name={data.product.name}
+                  rating={data.product.rating}
+                  description={data.product.description}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -231,24 +275,21 @@ function App() {
               <p className="text-base text-slate-400">We all know and love</p>
               <a className="link link-hover text-pink-600">See more ＞</a>
             </div>
-            <div id="editor-choice" className="justify-self-center p-2 my-10">
-              <div className="flex max-w-full place-content-center gap-10">
-                <img src={nivea} alt="nivea" className="w-20 h-20" />
+            <div id="editor-choice">
+              <div className="flex max-w-full place-content-center gap-10 my-5">
+                <img id="brands" src={nivea} alt="nivea" />
+                <img id="brands" src={theordinary} alt="theordinary" />
+                <img id="brands" src={thebodyshop} alt="thebodyshop" />
+                <img id="brands" src={SKII} alt="SKII" />
                 <img
-                  src={theordinary}
-                  alt="theordinary"
-                  className="w-20 h-20"
+                  id="brands"
+                  src={maybelline}
+                  alt="maybelline"
+                  className="w-32 h-14"
                 />
-                <img
-                  src={thebodyshop}
-                  alt="thebodyshop"
-                  className="w-24 h-14"
-                />
-                <img src={SKII} alt="SKII" className="w-24 h-14" />
-                <img src={maybelline} alt="maybelline" className="w-32 h-14" />
-                <img src={innisfree} alt="innisfree" className="w-20 h-20" />
+                <img id="brands" src={innisfree} alt="innisfree" />
               </div>
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl font-bold my-2">
                 Female Daily - Find everything you want to know about beauty on
                 Female Daily
               </h1>

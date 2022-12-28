@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../index.css";
+import "../styles/index.css";
 
 function TopFrame() {
   return (
@@ -32,6 +32,16 @@ function InternalCampaign() {
   );
 }
 
+function MR2() {
+  return (
+    <div className="grid justify-items-stretch">
+      <div id="mr" className="justify-self-center text-center">
+        MR 2 <br /> 300x250
+      </div>
+    </div>
+  );
+}
+
 function BottomFrame() {
   return (
     <div className="grid justify-items-stretch">
@@ -42,4 +52,4 @@ function BottomFrame() {
   );
 }
 
-export { TopFrame, Billboard, InternalCampaign, BottomFrame };
+export { TopFrame, Billboard, InternalCampaign, MR2, BottomFrame };

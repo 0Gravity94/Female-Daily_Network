@@ -9,7 +9,16 @@ body {
 #editor-choice {
   width: 500px;
   height: max-content;
+  align-items: center;
+  justify-content: center;
 }
+
+/* #cards {
+  display: flex;
+  flex-wrap: wrap;
+  columns: 5;
+  column-gap: 20px;
+} */
 
 #top-frame {
   background-color: gainsboro;
@@ -51,6 +60,20 @@ body {
   font-weight: bold;
   color: dimgray;
   margin: 10px;
+}
+
+#mr {
+  background-color: gainsboro;
+  border: 1px solid slategrey;
+  height: 125px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: bold;
+  color: dimgray;
+  margin: 20px;
 }
 
 #bottom-frame {
@@ -111,6 +134,20 @@ body {
     margin: 10px;
   }
 
+  #mr {
+    background-color: gainsboro;
+    border: 1px solid slategrey;
+    height: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: dimgray;
+    margin: 20px;
+  }
+
   #bottom-frame {
     background-color: gainsboro;
     border: 1px solid slategrey;
@@ -129,5 +166,37 @@ body {
   #editor-choice {
     width: 1100px;
     height: max-content;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #cards-editor {
+    display: flex;
+    columns: 5;
+    gap: 2em;
+  }
+
+  #cards-article {
+    column-count: 3;
+    gap: 2em;
+    margin-top: 20px;
+  }
+
+  #cards-review {
+    display: flex;
+    width: fit-content;
+    gap: 2em;
+  }
+
+  #cards-trending {
+    display: flex;
+    column-count: 5;
+    gap: 2em;
+  }
+
+  #brands {
+    width: 10%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
   }
 }

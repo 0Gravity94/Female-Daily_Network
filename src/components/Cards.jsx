@@ -1,16 +1,19 @@
 import React from "react";
 
 import female from "../assets/female.jpeg";
+import { SlUserFemale } from "react-icons/sl";
+import { TfiMenuAlt } from "react-icons/tfi";
+import { BiMessageDetail, BiMinus } from "react-icons/bi";
 
 function CardsEditor(props) {
   return (
-    <div className="container grow flex flex-col justify-between gap-2 rounded-lg mt-14 p-2 lg:w-60 border bg-white">
+    <div className="container grow justify-between gap-2 rounded-lg mt-14 p-2 lg:w-60 border bg-white">
       <div className="relative">
         <img
           src={female}
-          className="absolute -top-12 left-5 rounded-full w-1/4 h-auto"
+          className="absolute md:-top-11 md:left-5 rounded-full w-1/4 h-auto"
         />
-        <div className="absolute -top-12 left-24">
+        <div className="absolute md:-top-12 md:left-20">
           <h1 className="font-bold text-sm">{props.editor}</h1>
           <p className="text-xs text-slate-500">{props.role}</p>
         </div>
@@ -44,12 +47,12 @@ function CardsEditor(props) {
 
 function CardsArticles(props) {
   return (
-    <div className="container grow flex flex-col w-1/2 h-auto">
+    <div className="container grow flex flex-col w-full h-auto mb-10">
       <div>
         <img
           src={props.image}
           alt={props.title}
-          className="rounded-md max-w-full h-auto"
+          className="rounded-md max-w-auto h-auto"
         />
       </div>
       <div className="font-bold text-sm">{props.title}</div>
@@ -121,4 +124,30 @@ function CardsReview(props) {
   );
 }
 
-export { CardsEditor, CardsProduct, CardsArticles, CardsReview };
+function CardsGroup() {
+  return (
+    <div className="grid justify-items-center rounded-lg border shadow-lg mt-5 mb-10 p-4 w-64 bg-white">
+      <img src={female} className="rounded-full w-2/3 h-auto" />
+      <h1 className="text-lg font-bold my-2">Embrace the Curl</h1>
+      <div className="flex gap-6 mt-4">
+        <div className="flex">
+          <SlUserFemale />
+          <BiMinus />
+        </div>
+        <div className="flex">
+          <TfiMenuAlt />
+          <BiMinus />
+        </div>
+        <div className="flex">
+          <BiMessageDetail />
+          <BiMinus />
+        </div>
+      </div>
+      <p className="text-xs text-center mt-2 mb-5">
+        May our curls pop and never stop!
+      </p>
+    </div>
+  );
+}
+
+export { CardsEditor, CardsProduct, CardsArticles, CardsReview, CardsGroup };

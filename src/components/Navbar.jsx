@@ -1,10 +1,11 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { SlUserFemale } from "react-icons/sl";
 import fdn from "../assets/fdn.png";
 
 function Navbar() {
   return (
-    <div className="navbar">
+    <div className="navbar p-0">
       <div className="navbar-start">
         <a className="btn btn-ghost">
           <GiHamburgerMenu />
@@ -23,7 +24,10 @@ function Navbar() {
         </div>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-pink-600 box-content">LOGIN/SIGNUP</a>
+        <button className="flex justify-center gap-2 items-center bg-pink-700 text-white box-content w-40 h-16">
+          <SlUserFemale /> LOGIN/SIGNUP
+        </button>
+        {/* <a className="btn bg-pink-600 box-content">LOGIN/SIGNUP</a> */}
       </div>
     </div>
   );
