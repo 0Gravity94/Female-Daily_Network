@@ -1,7 +1,7 @@
 import React from "react";
 
 import appStore from "../assets/appStore.png";
-import googlePlay from "../assets/googlePlay.png";
+import googlePlay from "../assets/googleplay.png";
 import fdn from "../assets/fdn.png";
 import twitter from "../assets/twitter.svg";
 import facebook from "../assets/facebook.svg";
@@ -30,7 +30,7 @@ function Footer() {
           <h1>Download Our Mobile App</h1>
           <div className="lg:flex gap-4">
             <img src={appStore} alt="AppStore" className="w-32 h-full lg:m-1" />
-            <img src={googlePlay} alt="GooglePlay" className="w-32 h-full" />
+            <img src={googleplay} alt="GooglePlay" className="w-32 h-full" />
           </div>
         </div>
       </footer>
